@@ -59,6 +59,11 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: "generos_id"
         });
 
+        Libro.belongsTo(models.Idioma, {
+            as: "idioma",
+            foreignKey: "idiomas_id"
+        });
+
         // mas relaciones aquí a partir de la línea 69
     }
 

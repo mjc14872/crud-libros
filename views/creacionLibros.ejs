@@ -72,6 +72,17 @@
             </select>
         </div>
 
+        <div>
+            <label for="">Idioma: </label>
+            <select name="idioma">
+                <% for (let i = 0; i < idiomas.length; i++) {%>
+                    <option value="<%=idiomas[i].id%>">
+                        <%=idiomas[i].nombre%>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
         <button type="submit">Alta Libro</button>
     
     </form>

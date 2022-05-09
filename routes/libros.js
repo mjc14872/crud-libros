@@ -9,4 +9,7 @@ router.post("/crear", librosController.guardar);
 //lectura de libros
 router.get("/", librosController.listar);
 
+//Detalle de libros
+// router.get("/:id", librosController.detalle);
+
 module.exports = router;
