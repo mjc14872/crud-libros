@@ -1,3 +1,78 @@
 <%- include('header') -%>
+    <h1>Crear Libro</h1>
+    <form action="/libros/crear" method="POST">
+        <div>
+            <label for="">Título: </label>
+            <input type="text" name="titulo">
+        </div>
 
+        <div>
+            <label for="">Editorial: </label>
+            <input type="text" name="editorial">
+        </div>
+
+        <div>
+            <label for="">Precio Unitario: </label>
+            <input type="number" name="preciounitario">
+        </div>
+
+        <div>
+            <label for="">Descuento: </label>
+            <input type="number" name="descuento">
+        </div>
+
+        <div>
+            <label for="">Best Seller: </label>
+            <input type="number" name="bestseller">
+        </div>
+
+        <div>
+            <label for="">Reseña: </label>
+            <input type="text" name="resenia">
+        </div>
+
+        <div>
+            <label for="">Páginas: </label>
+            <input type="number" name="paginas">
+        </div>
+
+        <div>
+            <label for="">Peso: </label>
+            <input type="number" name="peso">
+        </div>
+
+        <div>
+            <label for="">Edición: </label>
+            <input type="number" name="edicion">
+        </div>
+
+        <div>
+            <label for="">ISBN: </label>
+            <input type="number" name="isbn">
+        </div>
+
+        <div>
+            <label for="">Cantidad: </label>
+            <input type="number" name="cantidad">
+        </div>
+
+        <div>
+            <label for="">Imagen: </label>
+            <input type="text" name="imagen">
+        </div>
+
+        <div>
+            <label for="">Género: </label>
+            <select name="genero">
+                <% for (let i = 0; i < generos.length; i++) {%>
+                    <option value="<%=generos[i].id%>">
+                        <%=generos[i].nombre%>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <button type="submit">Alta Libro</button>
+    
+    </form>
 <%- include('footer') -%>

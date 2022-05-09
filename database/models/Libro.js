@@ -44,18 +44,6 @@ module.exports = function (sequelize, dataTypes) {
         },
         generos_id: {
             type: dataTypes.INTEGER
-        },
-        idiomas_id: {
-            type: dataTypes.INTEGER
-        },
-        formatos_id: {
-            type: dataTypes.INTEGER 
-        },
-        autores_id: {
-            type: dataTypes.INTEGER
-        },
-        medios_id: {
-            type: dataTypes.INTEGER
         }
     }
     let config = {
