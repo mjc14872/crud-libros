@@ -83,6 +83,28 @@
             </select>
         </div>
 
+        <div>
+            <label for="">Formato: </label>
+            <select name="formato">
+                <% for (let i = 0; i < formatos.length; i++) {%>
+                    <option value="<%=formatos[i].id%>">
+                        <%=formatos[i].nombre%>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Medio: </label>
+            <select name="medio">
+                <% for (let i = 0; i < medios.length; i++) {%>
+                    <option value="<%=medios[i].id%>">
+                        <%=medios[i].nombre%>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
         <button type="submit">Alta Libro</button>
     
     </form>

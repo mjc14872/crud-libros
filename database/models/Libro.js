@@ -64,6 +64,16 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: "idiomas_id"
         });
 
+        Libro.belongsTo(models.Formato, {
+            as: "formato",
+            foreignKey: "formatos_id"
+        });
+
+        Libro.belongsTo(models.Medio, {
+            as: "medio",
+            foreignKey: "medios_id"
+        });
+
         // mas relaciones aquí a partir de la línea 69
     }
 

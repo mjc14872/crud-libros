@@ -4,10 +4,15 @@ let librosController = {
     crear: function (req, res) {
         db.Genero.findAll()
             .then(function(generos) {
-                // return res.render("creacionLibros", {generos:generos});
                 db.Idioma.findAll()
                     .then(function(idiomas) {
-                        return res.render("creacionLibros", {idiomas:idiomas, generos:generos});
+                        db.Formato.findAll()
+                            .then(function(formatos) {
+                                db.Medio.findAll()
+                                    .then(function(medios) {
+                                        return res.render("creacionLibros", {idiomas, generos, formatos, medios});
+                                    })
+                            })
                     })
             })
     },
@@ -26,7 +31,9 @@ let librosController = {
             cantidad: req.body.cantidad,
             imagen: req.body.imagen,
             generos_id: req.body.genero,
-            idiomas_id: req.body.idioma
+            idiomas_id: req.body.idioma,
+            formatos_id: req.body.formato,
+            medios_id: req.body.medio,
         });
 
         res.redirect("/libros");
