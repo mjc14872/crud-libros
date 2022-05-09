@@ -64,5 +64,15 @@ module.exports = function (sequelize, dataTypes) {
     }
     
     let Libro = sequelize.define(alias, cols, config);
+
+    Libro.associate = function(models) {
+        Libro.belongsTo(models.Genero, {
+            as: "genero",
+            foreignKey: "generos_id"
+        });
+
+        // mas relaciones aquí a partir de la línea 69
+    }
+
     return Libro;
 }
