@@ -25,7 +25,14 @@ let librosController = {
         });
 
         res.redirect("/libros");
+    },
+    listar: function(req, res) {
+        db.Libro.findAll()
+            .then(function(libros){
+                res.render("listadoLibros", {libros:libros})
+            })
     }
+
 }
 
 

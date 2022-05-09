@@ -6,4 +6,7 @@ var librosController = express = require("../controllers/librosController");
 router.get("/crear", librosController.crear);
 router.post("/crear", librosController.guardar);
 
+//lectura de libros
+router.get("/", librosController.listar);
+
 module.exports = router;
