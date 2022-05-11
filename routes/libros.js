@@ -16,6 +16,8 @@ router.get("/:id", librosController.detalle);
 router.get("/editar/:id", librosController.editar);
 router.post("/editar/:id", librosController.actualizar);
 
+//Borrar libros
+router.post("/borrar/:id", librosController.borrar);
 
 module.exports = router;
 

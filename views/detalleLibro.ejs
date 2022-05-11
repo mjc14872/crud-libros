@@ -54,6 +54,9 @@
     <a href="/libros/editar/<%=libro.id%>">
         <button>Editar</button>
     </a>
-    
+    <form action="/libros/borrar/<%=libro.id%>" method="POST">
+        <button type="Submit">Eliminar</button>
+    </form>
+
     
 <%- include('footer') -%>

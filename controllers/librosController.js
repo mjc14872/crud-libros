@@ -97,6 +97,14 @@ let librosController = {
 
         res.redirect("/libros/" + req.params.id);
     },
+    borrar: function(req, res) {
+        db.Libro.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/libros");
+    }
 
 }
 
