@@ -9,6 +9,9 @@ module.exports = function (sequelize, dataTypes) {
         titulo: {
                 type: dataTypes.STRING
         },
+        autor: {
+                type: dataTypes.STRING
+        },
         editorial: {
             type: dataTypes.STRING
         },

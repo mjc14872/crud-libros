@@ -10,6 +10,6 @@ router.post("/crear", librosController.guardar);
 router.get("/", librosController.listar);
 
 //Detalle de libros
-// router.get("/:id", librosController.detalle);
+router.get("/:id", librosController.detalle);
 
 module.exports = router;

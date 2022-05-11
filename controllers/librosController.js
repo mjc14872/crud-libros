@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 let db = require("../database/models");
 
 let librosController = {
@@ -19,6 +20,7 @@ let librosController = {
     guardar: function(req, res) {
         db.Libro.create({
             titulo: req.body.titulo,
+            autor:req.body.autor,
             editorial: req.body.editorial,
             precio_unitario: req.body.preciounitario,
             descuento: req.body.descuento,
@@ -43,6 +45,17 @@ let librosController = {
             .then(function(libros){
                 res.render("listadoLibros", {libros:libros})
             })
+    },
+    detalle: function(req, res) {
+        // console.log(req.params.id);
+        db.Libro.findByPk(req.params.id, {
+            include: [{association: "genero"}, {association: "formato"},
+                      {association: "idioma"}, {association: "medio"}]
+        })
+            .then(function(libro) {
+                res.render("detalleLibro", {libro});
+            })
+    
     }
 
 }

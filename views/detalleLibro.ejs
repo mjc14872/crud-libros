@@ -1,4 +1,51 @@
 <%- include('header') -%>
     <h1><%=libro.titulo%></h1>
+    <ul>
+        <li>
+            Autor (es): <%=libro.autor%>
+        </li>
+        <li>
+            Editorial: <%=libro.editorial%>
+        </li>
+        <li>
+            Precio unitario: <%=libro.precio_unitario%>
+        </li>
+        <li>
+            Descuento: <%=libro.descuento%>
+        </li>
+        <li>
+            BestSeller: <%=libro.bestSeller%>
+        </li>
+        <li>
+            Reseña: <%=libro.resenia%>
+        </li>
+        <li>
+            Páginas: <%=libro.paginas%>
+        </li>
+        <li>
+            Edición: <%=libro.edicion%>
+        </li>
+        <li>
+            ISBN: <%=libro.isbn%>
+        </li>
+        <li>
+            Cantidad: <%=libro.cantidad%>
+        </li>
+        <li>
+            Imagen: <%=libro.imagen%>
+        </li>
+        <li>
+            Género: <%=libro.genero.nombre%>
+        </li>
+        <li>
+            Formato: <%=libro.formato.nombre%>
+        </li>
+        <li>
+            Formato: <%=libro.idioma.nombre%>
+        </li>
+        <li>
+            Formato: <%=libro.medio.nombre%>
+        </li>
+    </ul>
     
 <%- include('footer') -%>
