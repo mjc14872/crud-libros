@@ -14,4 +14,8 @@ router.get("/:id", librosController.detalle);
 
 //Actualización de libros
 router.get("/editar/:id", librosController.editar);
+router.post("/editar/:id", librosController.actualizar);
+
+
 module.exports = router;
+

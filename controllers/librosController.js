@@ -35,7 +35,7 @@ let librosController = {
             generos_id: req.body.genero,
             idiomas_id: req.body.idioma,
             formatos_id: req.body.formato,
-            medios_id: req.body.medio,
+            medios_id: req.body.medio
         });
 
         res.redirect("/libros");
@@ -69,7 +69,34 @@ let librosController = {
                 res.render("editarLibro", 
                 {libro, generos, idiomas, formatos, medios});
             })
-    }
+    },
+    actualizar: function(req, res){
+        db.Libro.update({
+            titulo: req.body.titulo,
+            autor: req.body.autor,
+            editorial: req.body.editorial,
+            precio_unitario: req.body.preciounitario,
+            descuento: req.body.descuento,
+            bestSeller: req.body.bestseller,
+            resenia: req.body.resenia,
+            paginas: req.body.paginas,
+            peso: req.body.peso,
+            edicion: req.body.edicion,
+            isbn: req.body.isbn,
+            cantidad: req.body.cantidad,
+            imagen: req.body.imagen,
+            generos_id: req.body.genero,
+            idiomas_id: req.body.idioma,
+            formatos_id: req.body.formato,
+            medios_id: req.body.medio
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.redirect("/libros/" + req.params.id);
+    },
 
 }
 
