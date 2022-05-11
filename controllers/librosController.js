@@ -56,6 +56,19 @@ let librosController = {
                 res.render("detalleLibro", {libro});
             })
     
+    },
+    editar: function(req, res) {
+        let pedidoLibro = db.Libro.findByPk(req.params.id);
+        let pedidoGenero = db.Genero.findAll();
+        let pedidoIdioma = db.Idioma.findAll();
+        let pedidoFormato = db.Formato.findAll();
+        let pedidoMedio = db.Medio.findAll();
+
+        Promise.all([pedidoLibro, pedidoGenero, pedidoIdioma, pedidoFormato, pedidoMedio])
+            .then(function([libro, generos, idiomas, formatos, medios]){
+                res.render("editarLibro", 
+                {libro, generos, idiomas, formatos, medios});
+            })
     }
 
 }

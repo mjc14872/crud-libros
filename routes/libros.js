@@ -12,4 +12,6 @@ router.get("/", librosController.listar);
 //Detalle de libros
 router.get("/:id", librosController.detalle);
 
+//Actualización de libros
+router.get("/editar/:id", librosController.editar);
 module.exports = router;

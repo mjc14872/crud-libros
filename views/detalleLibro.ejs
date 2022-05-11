@@ -38,14 +38,19 @@
             Género: <%=libro.genero.nombre%>
         </li>
         <li>
+            Idioma: <%=libro.idioma.nombre%>
+        </li>
+        <li>
             Formato: <%=libro.formato.nombre%>
         </li>
+       
         <li>
-            Formato: <%=libro.idioma.nombre%>
-        </li>
-        <li>
-            Formato: <%=libro.medio.nombre%>
+            Medio: <%=libro.medio.nombre%>
         </li>
     </ul>
+    <a href="/libros/editar/<%=libro.id%>">
+        <button>Editar</button>
+    </a>
+    
     
 <%- include('footer') -%>
